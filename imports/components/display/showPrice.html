@@ -1,8 +1,6 @@
 <header>
 	<h1>Shirt Price Calculator</h1>
-	
-		<!--ng-submit="$ctrl.enterQuantity($ctrl.newQuantity)"-->
-		
+
 	<button ng-click="quantity = quantity + 5">+5 Quantity</button>	
 	<button ng-click="quantity = quantity + 25">+25 Quantity</button>
 	<form>
@@ -11,7 +9,6 @@
 	<button ng-click="quantity = quantity - 5">-5 Quantity</button>
 	<button ng-click="quantity = quantity - 25">-25 Quantity</button>
 	
-	<!-- ng-submit="$ctrl.updateQty($ctrl.newQty)"  -->
 	<form >
 		Cost<input ng-model="$ctrl.newCost" type="number" placeholder="Enter $ctrl.newCost"/>
 	</form>
@@ -45,21 +42,3 @@
 		<p> {{costEa}} </p>
 	 </h3>
  </div>
- 
-<!--
-<div>
-	<form ng-submit="$ctrl.addTask($ctrl.newTask)">
-		<input ng-model="$ctrl.newTask" type="text" name="text" placeholder="Type to add new tasks"/>
-	</form>
-</div>
- <ul>
-  <li ng-repeat="task in $ctrl.tasks" ng-class="{'checked': task.checked}">
-		<button ng-click="$ctrl.removeTask(task)">Remove</button>
-			
-		<input type="checkbox" ng-checked="task.checked" ng-click="$ctrl.setChecked(task)" class="toggle-checked"/>		
-	<span>
-		{{task.text}}       {{task.checked}}
-	</span>
-  </li>
-</ul>
--->
