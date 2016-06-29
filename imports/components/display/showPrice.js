@@ -10,21 +10,25 @@ class DisplayCtrl {
 		$scope.viewModel(this);
 
 	this.baseColor = "not chosen";
-	this.test = [50,10];
+	
+	this.test = [12,10];
 	this.tst = "other stuff";
+		
+	if (this.baseColor = "White"){this.test[1]=4};
+	if (this.baseColor = "Light"){this.test[1]=5};
+	if (this.baseColor = "Dark"){this.test[1]=6};
 	
 	this.qtyButton = function(increment) {
 		var inc = increment;
 		this.quantity += inc;
-	}
+	};
 	
 	this.downOne = function() {
 		this.test[0] -= 1;
 	};
 
-	this.calculate = function(inpa) {
-		var inpa = inpa;
-		return this.test[0]*this.newCost*inpa;
+	this.calculate = function() {
+		return this.test[0]+this.test[1]+this.newCost*this.quantity;
 	};	
 	
   }

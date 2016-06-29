@@ -1,13 +1,12 @@
 <header>
-	<h1>Shirt Price Calculator</h1>
-
-	<button ng-click="quantity = quantity + 5">+5 Quantity</button>	
-	<button ng-click="quantity = quantity + 25">+25 Quantity</button>
+	<h1>Shirt Price Calculator</h1>		
+	<h3>Enter Quantity</h3>
+	
 	<form>
-		<input ng-model="quantity" type="number" placeholder="Enter Quantity"/>
+		<input ng-model="$ctrl.quantity" type="number" placeholder="Enter Quantity"/>
 	</form>	
-	<button ng-click="quantity = quantity - 5">-5 Quantity</button>
-	<button ng-click="quantity = quantity - 25">-25 Quantity</button>
+	
+	<button ng-click="$ctrl.quantity = $ctrl.quantity + 5">+5 Quantity</button>
 	
 	<form >
 		Cost<input ng-model="$ctrl.newCost" type="number" placeholder="Enter $ctrl.newCost"/>
@@ -23,20 +22,20 @@
  </header>
 
 <div>
-	<h2>Quantity of Shirts: {{quantity}}</h2>
-	<h3>cost {{$ctrl.newCost+10}} / x qty / {{$ctrl.newCost * quantity}}</h3>
+	<h2>Quantity of Shirts: {{$ctrl.quantity}}</h2>
+	<h3>Cost {{$ctrl.newCost}}</h3>
 		<p>{{$ctrl.tst}}  {{$ctrl.test}}</p>
 	
 	<button ng-click="$ctrl.downOne()"> -1 other stuff[0] </button>
 	
 	<h3>
 		Total Cost:
-		<p> {{$ctrl.calculate(quantity)}} </p>
-		<p> {{ $ctrl.calculate(1) + $ctrl.test[1] }} </p>
+		<p> {{$ctrl.calculate()}} </p>
+		<p> {{$ctrl.newCost * $ctrl.quantity}} </p>
 	 </h3>
-	 
-	 {{$ctrl.baseColor}}
-	 
+	
+	{{$ctrl.baseColor}}
+	
 	<h3>
 		Cost Per Shirt:
 		<p> {{costEa}} </p>
