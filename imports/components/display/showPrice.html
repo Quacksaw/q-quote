@@ -1,0 +1,63 @@
+<header>
+	<h1>Shirt Price Calculator</h1>
+	
+		<!--ng-submit="$ctrl.enterQuantity($ctrl.newQuantity)"-->
+		
+	<button ng-click="quantity = quantity + 5">+5 Quantity</button>	
+	<button ng-click="quantity = quantity + 25">+25 Quantity</button>
+	<form>
+		<input ng-model="quantity" type="number" placeholder="Enter Quantity"/>
+	</form>	
+	<button ng-click="quantity = quantity - 5">-5 Quantity</button>
+	<button ng-click="quantity = quantity - 25">-25 Quantity</button>
+	
+	<!-- ng-submit="$ctrl.updateQty($ctrl.newQty)"  -->
+	<form >
+		Cost<input ng-model="$ctrl.newCost" type="number" placeholder="Enter $ctrl.newCost"/>
+	</form>
+	
+	Base Color
+	<select ng-model="$ctrl.baseColor">
+		<option>White</option>
+		<option>Light</option>
+		<option>Dark</option>
+	</select>
+	
+ </header>
+
+<div>
+	<h2>Quantity of Shirts: {{quantity}}</h2>
+	<h3>cost {{$ctrl.newCost+10}} / x qty / {{$ctrl.newCost * quantity}}</h3>
+		<p>{{$ctrl.tst}}  {{$ctrl.test}}</p>
+	
+	<button ng-click="$ctrl.downOne()"> -1 other stuff[0] </button>
+	
+	<h3>
+		Total Cost:
+		<p> {{$ctrl.calculate(quantity)}} </p>
+		<p> {{ $ctrl.calculate(1) + $ctrl.test[1] }} </p>
+	 </h3>
+	 
+	 {{$ctrl.baseColor}}
+	 
+	<h3>
+		Cost Per Shirt:
+		<p> {{costEa}} </p>
+	 </h3>
+ </div>
+ 
+<div>
+	<form ng-submit="$ctrl.addTask($ctrl.newTask)">
+		<input ng-model="$ctrl.newTask" type="text" name="text" placeholder="Type to add new tasks"/>
+	</form>
+</div>
+ <ul>
+  <li ng-repeat="task in $ctrl.tasks" ng-class="{'checked': task.checked}">
+		<button ng-click="$ctrl.removeTask(task)">Remove</button>
+			
+		<input type="checkbox" ng-checked="task.checked" ng-click="$ctrl.setChecked(task)" class="toggle-checked"/>		
+	<span>
+		{{task.text}}       {{task.checked}}
+	</span>
+  </li>
+</ul>
