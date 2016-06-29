@@ -1,4 +1,11 @@
 /* CSS declarations go here */
 * {
-	margin: 3px
+	margin: 4px
+}
+span {
+	border: 2px solid black;
+	padding: 2px
+}
+h2,h3 {
+	margin: 10px
 }
