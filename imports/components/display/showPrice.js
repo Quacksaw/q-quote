@@ -28,8 +28,22 @@ class DisplayCtrl {
 	};
 
 	this.calculate = function() {
-		return this.test[0]+this.test[1]+this.newCost*this.quantity;
-	};	
+		if (this.baseColor === "White"){
+			this.test[1]=4;
+			return this.test[0]+this.test[1]+this.newCost*this.quantity;
+			}
+		else if (this.baseColor === "Light"){
+			this.test[1]=5;
+			return this.test[0]+this.test[1]+this.newCost*this.quantity;
+			}
+		else if (this.baseColor === "Dark"){
+			this.test[1]=6;
+			return this.test[0]+this.test[1]+this.newCost*this.quantity;
+			}
+		else {
+			return this.test[0]+this.test[1]+this.newCost*this.quantity;
+		 }
+	};
 	
   }
 }
