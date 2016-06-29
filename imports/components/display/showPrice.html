@@ -18,12 +18,17 @@
 		<option>Light</option>
 		<option>Dark</option>
 	</select>
-	
+	Shirt Style
+	<select ng-model="$ctrl.shirtStyle">
+		<option>Short Sleeve</option>
+		<option>Long Sleeve</option>
+		<option>Tank Top</option>
+	</select>
  </header>
 
 <div>
 	<h2>Quantity of Shirts: {{$ctrl.quantity}}</h2>
-	<h3>Cost {{$ctrl.newCost}}</h3>
+	<h3>Cost Each{{$ctrl.newCost}}</h3>
 		<p>{{$ctrl.tst}}  {{$ctrl.test}}</p>
 	
 	<button ng-click="$ctrl.downOne()"> -1 other stuff[0] </button>
