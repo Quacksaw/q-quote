@@ -14,9 +14,9 @@ class DisplayCtrl {
 	this.test = [12,10];
 	this.tst = "other stuff";
 		
-	if (this.baseColor = "White"){this.test[1]=4};
-	if (this.baseColor = "Light"){this.test[1]=5};
-	if (this.baseColor = "Dark"){this.test[1]=6};
+	if (this.baseColor === "White"){this.test[1]=4};
+	if (this.baseColor === "Light"){this.test[1]=5};
+	if (this.baseColor === "Dark"){this.test[1]=6};
 	
 	this.qtyButton = function(increment) {
 		var inc = increment;
