@@ -9,7 +9,7 @@
 	<button ng-click="$ctrl.quantity = $ctrl.quantity + 5">+5 Quantity</button>
 	
 	<form >
-		Cost<input ng-model="$ctrl.newCost" type="number" placeholder="Enter $ctrl.newCost"/>
+		Enter Number of Print Colors :<input ng-model="$ctrl.printColors" type="number" placeholder="Enter # of Colors"/>
 	</form>
 	
 	Base Color
@@ -24,25 +24,26 @@
 		<option>Long Sleeve</option>
 		<option>Tank Top</option>
 	</select>
+	<button ng-click="$ctrl.shortSleeve()"> S/S </button>
+	<button ng-click="$ctrl.longSleeve()"> L/S </button>
+	<button ng-click="$ctrl.tankTop()"> Tank </button>
  </header>
 
 <div>
-	<h2>Quantity of Shirts: {{$ctrl.quantity}}</h2>
-	<h3>Cost Each{{$ctrl.newCost}}</h3>
-		<p>{{$ctrl.tst}}  {{$ctrl.test}}</p>
+	<p>Base Cost Array: {{$ctrl.baseCost}} </p>
+	<p>Base Color : {{$ctrl.baseColor}} </p>
+	<p>Print Colors : {{$ctrl.printColors}} </p>
+</div>
+<div>
 	
-	<button ng-click="$ctrl.downOne()"> -1 other stuff[0] </button>
+	<h2> Total Cost: {{$ctrl.calculate()}} </h2>
 	
-	<h3>
-		Total Cost:
-		<p> {{$ctrl.calculate()}} </p>
-		<p> {{$ctrl.newCost * $ctrl.quantity}} </p>
-	 </h3>
+	<h3> Quantity of Shirts: {{$ctrl.quantity}} </h3>	
 	
-	{{$ctrl.baseColor}}
-	
-	<h3>
-		Cost Per Shirt:
-		<p> {{costEa}} </p>
-	 </h3>
+	<h3> Cost Per Shirt: {{$ctrl.costEa()}} </h3>
+	 
  </div>
+ 
+ 
+ 
+ 

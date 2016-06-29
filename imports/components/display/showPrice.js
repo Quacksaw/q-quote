@@ -8,43 +8,52 @@ import template from './showPrice.html';
 class DisplayCtrl {
 	constructor($scope) {
 		$scope.viewModel(this);
-
+	this.quantity = 12;
 	this.baseColor = "not chosen";
+	this.baseCost = [4,0];
+	this.printColors = 0;
 	
-	this.test = [12,10];
-	this.tst = "other stuff";
-		
-	if (this.baseColor === "White"){this.test[1]=4};
-	if (this.baseColor === "Light"){this.test[1]=5};
-	if (this.baseColor === "Dark"){this.test[1]=6};
-	
-	this.qtyButton = function(increment) {
-		var inc = increment;
-		this.quantity += inc;
+	this.shortSleeve = function() {
+		this.baseCost[0] = 4;
+		this.shirtStyle = "Short Sleeve";
 	};
-	
-	this.downOne = function() {
-		this.test[0] -= 1;
+	this.longSleeve = function() {
+		this.baseCost[0] = 7;
+		this.shirtStyle = "Long Sleeve";
 	};
-
+	this.tankTop = function() {
+		this.baseCost[0] = 5;
+		this.shirtStyle = "Tank Top";
+	};
+	this.costEa = function() {
+		var tC = this.calculate();
+		return tC/this.quantity;
+	}
 	this.calculate = function() {
 		if (this.baseColor === "White"){
-			this.test[1]=4;
-			return this.test[0]+this.test[1]+this.newCost*this.quantity;
+			this.baseCost[1]=0;
+			var eaCost = this.baseCost[0]+this.baseCost[1]+this.printColors;
+			var fCost = eaCost*this.quantity;
+			return fCost;
 			}
 		else if (this.baseColor === "Light"){
-			this.test[1]=5;
-			return this.test[0]+this.test[1]+this.newCost*this.quantity;
+			this.baseCost[1]=1;
+			var eaCost = this.baseCost[0]+this.baseCost[1]+this.printColors;
+			var fCost = eaCost*this.quantity;
+			return fCost;
 			}
 		else if (this.baseColor === "Dark"){
-			this.test[1]=6;
-			return this.test[0]+this.test[1]+this.newCost*this.quantity;
+			this.baseCost[1]=2;
+			var eaCost = this.baseCost[0]+this.baseCost[1]+this.printColors;
+			var fCost = eaCost*this.quantity;
+			return fCost;
 			}
 		else {
-			return this.test[0]+this.test[1]+this.newCost*this.quantity;
+			var eaCost = this.baseCost[0]+this.baseCost[1]+this.printColors;
+			var fCost = eaCost*this.quantity;
+			return fCost;
 		 }
-	};
-	
+	};	
   }
 }
 
