@@ -11,7 +11,9 @@
 	<form >
 		Enter Number of Print Colors :<input ng-model="$ctrl.printColors" type="number" placeholder="Enter # of Colors"/>
 	</form>
-	
+	<form >
+		Enter Cost Per Color :<input ng-model="$ctrl.costPerColor" type="number" placeholder="Enter Cost Per Color"/>
+	</form>	
 	Base Color
 	<select ng-model="$ctrl.baseColor">
 		<option>White</option>
@@ -30,9 +32,13 @@
  </header>
 
 <div>
-	<p>Base Cost Array: {{$ctrl.baseCost}} </p>
+
+	<p> Reading from order Collection? : {{$ctrl.order}}</p>
+	<p> Reading from order Collectioner? : {{$ctrl.orderTwo}}</p>
 	<p>Base Color : {{$ctrl.baseColor}} </p>
+	<p>Base Cost Array: {{$ctrl.baseCost}} </p>	
 	<p>Print Colors : {{$ctrl.printColors}} </p>
+	<p>Current Cost Per Color : {{$ctrl.costPerColor}} </p>
 </div>
 <div>
 	<h3> Cost Per Shirt: <span>{{$ctrl.costEa() | currency}}</span> </h3>
