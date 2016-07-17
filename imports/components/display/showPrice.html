@@ -20,21 +20,20 @@
 		<option>Light</option>
 		<option>Dark</option>
 	</select>
-	Shirt Style
-	<select ng-model="$ctrl.shirtStyle">
-		<option>Short Sleeve</option>
-		<option>Long Sleeve</option>
-		<option>Tank Top</option>
-	</select>
+	Shirt Style :	
 	<button ng-click="$ctrl.shortSleeve()"> S/S </button>
 	<button ng-click="$ctrl.longSleeve()"> L/S </button>
 	<button ng-click="$ctrl.tankTop()"> Tank </button>
+	{{$ctrl.shirtStyle}}
  </header>
 
 <div>
-
-	<p> Reading from order Collection? : {{$ctrl.order}}</p>
-	<p> Reading from order Collectioner? : {{$ctrl.orderTwo}}</p>
+	<p> <strong>Reading from order Collection3 : </strong>{{$ctrl.order}}</p>
+	<p>---</p>
+	<p> <strong>Reading from all order Collections : </strong>{{$ctrl.order2}}</p>
+	<p>---</p>
+	<p> <strong>Reading from order Collections with qty:20 : </strong>{{$ctrl.order3}}</p>
+	<p>---</p>
 	<p>Base Color : {{$ctrl.baseColor}} </p>
 	<p>Base Cost Array: {{$ctrl.baseCost}} </p>	
 	<p>Print Colors : {{$ctrl.printColors}} </p>

@@ -58,11 +58,25 @@ class DisplayCtrl {
 	};	
 
 	// db.order.insert({ thingy: "Value One!", thinger: [5,0] }); //
+	// db.order.insert({ _id: "calcValues", item: "box", qty: 20 }) //
+	// db.order.insert({ _id: "calcValues2", item: "box", qty: 20 }) //
+	// db.order.insert({ _id: "calcValues3", shirtColorings: "Blue", qtyCheckpt: [20,50,100] }) //
+	
 		this.helpers({
 			order() {
+				return Order.find({"_id":"calcValues3"});
+			}
+		}),
+		this.helpers({
+			order2() {
 				return Order.find({});
 			}
-		})
+		}),
+		this.helpers({
+			order3() {
+				return Order.find({"qty":20});
+			}
+		})		
 
 		
 	}
