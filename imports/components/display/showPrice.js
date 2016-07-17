@@ -74,12 +74,28 @@ class DisplayCtrl {
 		}),
 		this.helpers({
 			order3() {
-				return Order.find({"qty":20});
+				return Order.find({"qty":2});
 			}
 		})		
-
 		
 	}
+	
+	changeValue(paramz) {
+		Order.update(
+		{
+		"_id":"calcValues"
+		},
+		
+		{$set:
+				{
+					qty:paramz
+				}	
+		}
+		
+		);
+		
+	}
+	
 }
 
 export default angular.module('displayModule', [

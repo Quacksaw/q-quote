@@ -11,7 +11,7 @@
 	<form >
 		Enter Number of Print Colors :<input ng-model="$ctrl.printColors" type="number" placeholder="Enter # of Colors"/>
 	</form>
-	<form >
+	<form ng-submit="$ctrl.changeValue($ctrl.costPerColor)">
 		Enter Cost Per Color :<input ng-model="$ctrl.costPerColor" type="number" placeholder="Enter Cost Per Color"/>
 	</form>	
 	Base Color
@@ -32,7 +32,7 @@
 	<p>---</p>
 	<p> <strong>Reading from all order Collections : </strong>{{$ctrl.order2}}</p>
 	<p>---</p>
-	<p> <strong>Reading from order Collections with qty:20 : </strong>{{$ctrl.order3}}</p>
+	<p> <strong>Reading from order Collections with qty:2 : </strong>{{$ctrl.order3}}</p>
 	<p>---</p>
 	<p>Base Color : {{$ctrl.baseColor}} </p>
 	<p>Base Cost Array: {{$ctrl.baseCost}} </p>	
