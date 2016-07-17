@@ -20,19 +20,22 @@
 		<option>Light</option>
 		<option>Dark</option>
 	</select>
+	
 	Shirt Style :	
 	<button ng-click="$ctrl.shortSleeve()"> S/S </button>
 	<button ng-click="$ctrl.longSleeve()"> L/S </button>
 	<button ng-click="$ctrl.tankTop()"> Tank </button>
 	{{$ctrl.shirtStyle}}
  </header>
-
 <div>
-	<p> <strong>Reading from order Collection3 : </strong>{{$ctrl.order}}</p>
+	
+</div>
+<div>
+	<p> <strong>Reading from order Collection3 : </strong>{{$ctrl.order3[0].qty}}</p>
 	<p>---</p>
 	<p> <strong>Reading from all order Collections : </strong>{{$ctrl.order2}}</p>
-	<p>---</p>
-	<p> <strong>Reading from order Collections with qty:2 : </strong>{{$ctrl.order3}}</p>
+	<p>--- Search Term <form > <input ng-model="$ctrl.idSearch" type="text" placeholder="Search _id s"/></form>---</p>
+	<p> <strong>Reading from order Collections with _id equal to *{{$ctrl.idSearch}}* input: </strong>{{$ctrl.order3}}</p>
 	<p>---</p>
 	<p>Base Color : {{$ctrl.baseColor}} </p>
 	<p>Base Cost Array: {{$ctrl.baseCost}} </p>	

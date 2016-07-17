@@ -13,6 +13,7 @@ class DisplayCtrl {
 	this.baseCost = [4,0];
 	this.printColors = 0;
 	this.costPerColor = 1;
+	this.idSearch = "";
 	
 	this.shortSleeve = function() {
 		this.baseCost[0] = 4;
@@ -40,7 +41,7 @@ class DisplayCtrl {
 			}
 		else if (this.baseColor === "Light"){
 			this.baseCost[1]=1;
-			var eaCost = this.baseCost[0]+this.baseCost[1]+this.printColors*this.costPerColor;
+			var eaCost = this.baseCost[0]+this.baseCost[1]+this.printColors+this.order[0].qtyCheckpt;
 			var fCost = eaCost*this.quantity;
 			return fCost;
 			}
@@ -74,7 +75,7 @@ class DisplayCtrl {
 		}),
 		this.helpers({
 			order3() {
-				return Order.find({"qty":2});
+				return Order.find({"_id":this.getReactively('idSearch')});
 			}
 		})		
 		
@@ -82,18 +83,11 @@ class DisplayCtrl {
 	
 	changeValue(paramz) {
 		Order.update(
-		{
-		"_id":"calcValues"
-		},
-		
-		{$set:
-				{
-					qty:paramz
-				}	
-		}
-		
-		);
-		
+			{"_id":this.getReactively('idSearch')},
+			{$set:
+				{qty:paramz}	
+			}
+		);		
 	}
 	
 }
