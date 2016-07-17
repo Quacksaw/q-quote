@@ -9,9 +9,11 @@
 	<button ng-click="$ctrl.quantity = $ctrl.quantity + 5">+5 Quantity</button>
 	
 	<form >
-		Cost<input ng-model="$ctrl.newCost" type="number" placeholder="Enter $ctrl.newCost"/>
+		Enter Number of Print Colors :<input ng-model="$ctrl.printColors" type="number" placeholder="Enter # of Colors"/>
 	</form>
-	
+	<form ng-submit="$ctrl.changeValue($ctrl.costPerColor)">
+		Enter Cost Per Color :<input ng-model="$ctrl.costPerColor" type="number" placeholder="Enter Cost Per Color"/>
+	</form>	
 	Base Color
 	<select ng-model="$ctrl.baseColor">
 		<option>White</option>
@@ -19,25 +21,33 @@
 		<option>Dark</option>
 	</select>
 	
+	Shirt Style :	
+	<button ng-click="$ctrl.shortSleeve()"> S/S </button>
+	<button ng-click="$ctrl.longSleeve()"> L/S </button>
+	<button ng-click="$ctrl.tankTop()"> Tank </button>
+	{{$ctrl.shirtStyle}}
  </header>
-
 <div>
-	<h2>Quantity of Shirts: {{$ctrl.quantity}}</h2>
-	<h3>Cost {{$ctrl.newCost}}</h3>
-		<p>{{$ctrl.tst}}  {{$ctrl.test}}</p>
 	
-	<button ng-click="$ctrl.downOne()"> -1 other stuff[0] </button>
-	
-	<h3>
-		Total Cost:
-		<p> {{$ctrl.calculate()}} </p>
-		<p> {{$ctrl.newCost * $ctrl.quantity}} </p>
-	 </h3>
-	
-	{{$ctrl.baseColor}}
-	
-	<h3>
-		Cost Per Shirt:
-		<p> {{costEa}} </p>
-	 </h3>
+</div>
+<div>
+	<p> <strong>Reading from order Collection3 : </strong>{{$ctrl.order3[0].qty}}</p>
+	<p>---</p>
+	<p> <strong>Reading from all order Collections : </strong>{{$ctrl.order2}}</p>
+	<p>--- Search Term <form > <input ng-model="$ctrl.idSearch" type="text" placeholder="Search _id s"/></form>---</p>
+	<p> <strong>Reading from order Collections with _id equal to *{{$ctrl.idSearch}}* input: </strong>{{$ctrl.order3}}</p>
+	<p>---</p>
+	<p>Base Color : {{$ctrl.baseColor}} </p>
+	<p>Base Cost Array: {{$ctrl.baseCost}} </p>	
+	<p>Print Colors : {{$ctrl.printColors}} </p>
+	<p>Current Cost Per Color : {{$ctrl.costPerColor}} </p>
+</div>
+<div>
+	<h3> Cost Per Shirt: <span>{{$ctrl.costEa() | currency}}</span> </h3>
+	<h2> Total Cost: <span>{{$ctrl.calculate() | currency}}</span> </h2>	
+	<h3> Quantity of Shirts: <span>{{$ctrl.quantity}}</span> </h3>	
  </div>
+ 
+ 
+ 
+ 
