@@ -40,7 +40,7 @@ class DisplayCtrl {
 			}
 		else if (this.baseColor === "Light"){
 			this.baseCost[1]=1;
-			var eaCost = this.baseCost[0]+this.baseCost[1]+this.printColors+this.order[0].qtyCheckpt;
+			var eaCost = this.baseCost[0]+this.baseCost[1]+this.printColors+this.costPerColor;
 			var fCost = eaCost*this.quantity;
 			return fCost;
 			}
@@ -64,31 +64,28 @@ class DisplayCtrl {
 	
 		this.helpers({
 			order() {
-				return Order.find({"_id":"calcValues3"});
-			}
-		}),
-		this.helpers({
-			order2() {
 				return Order.find({});
 			}
 		}),
 		this.helpers({
-			order3() {
-				return Order.find({"_id":this.getReactively('idSearch')});
+			order2() {
+				return Order.find({name:this.getReactively('nameSearch')});
 			}
 		})		
-		
-	}
+	};
 	
-	changeValue(paramz) {
-		Order.update(
-			{"_id":this.getReactively('idSearch')},
-			{$set:
-				{qty:paramz}	
+	addNewProfile() {
+		Order.insert(	
+			{
+				name:this.newName,
+				blanks:[this.newSS,this.newLS],
+				cpc:this.costPerColor
 			}
-		);		
-	}
-	
+		);	
+		this.newSS = '';
+		this.newLS = '';	
+		this.newName = '';		
+	}	
 }
 
 export default angular.module('displayModule', [
