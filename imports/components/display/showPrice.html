@@ -3,7 +3,7 @@
 		<span>Shirt Price Calculator</span>
 		<span>Current Profile
 			<select ng-model="$ctrl.currentProfile">
-				<option ng-repeat="profile in $ctrl.order">{{profile.name}}</option>
+				<option ng-repeat="profile in $ctrl.order2">{{profile.name}}</option>
 			</select>	
 		</span>
 	</h1>	
@@ -31,14 +31,28 @@
 	<button ng-click="$ctrl.longSleeve()"> L/S </button>
 	<button ng-click="$ctrl.tankTop()"> Tank </button>
 	{{$ctrl.shirtStyle}}
-	
-	<div>
-		<h3> Cost Per Shirt: <span>{{$ctrl.costEa() | currency}}</span> </h3>
-		<h2> Total Cost: <span>{{$ctrl.calculate() | currency}}</span> </h2>	
-		<h3> Quantity of Shirts: <span>{{$ctrl.quantity}}</span> </h3>	
-	</div>
 
  </header>
+<div>
+	<h3> Cost Per Shirt: <span>{{$ctrl.costEa() | currency}}</span> </h3>
+	<h2> Total Cost: <span>{{$ctrl.calculate() | currency}}</span> </h2>	
+	<h3> Quantity of Shirts: <span>{{$ctrl.quantity}}</span> </h3>	
+</div> 
+<div>
+	<p> <strong>Reading from all order Collections : </strong>{{$ctrl.order2}}</p>	
+	<p>---</p>
+	<p> <strong>Reading from current profile: * {{$ctrl.currentProfile}} *  : </strong>{{$ctrl.order}}</p>
+	<p>---</p>
+	
+	<p>Base Color : {{$ctrl.baseColor}} </p>
+	<p>Base Shirt Style: {{$ctrl.shirtStyle}} </p>	
+	<p>Print Colors : {{$ctrl.printColors}} </p>
+	
+	<p>Profile Name : {{$ctrl.order[0].name}} </p>
+	<p>Base Cost Array: {{$ctrl.order[0].blanks}} </p>	
+	<p>costpercolor : {{$ctrl.order[0].cpc}} </p>
+	<p>Current [0] in bc array : {{$ctrl.order[0].blanks[0]}} </p>
+</div> 
 <div>
 	
 	<form >
@@ -60,22 +74,4 @@
 	<button ng-click="$ctrl.addNewProfile()"> ADD PROFILE </button>	
 	
 </div>
-<div>
-	<p> <strong>Reading from all order Collections : </strong>{{$ctrl.order}}</p>	
-	
-	<p>---</p>
-	<p> <strong>Reading from order Collection, Searched for name: * {{$ctrl.nameSearch}} *  : </strong>{{$ctrl.order2}}</p>
-	
-	<p>-Search Term <form > <input ng-model="$ctrl.nameSearch" type="text" placeholder="Search names"/></form>---</p>
-	<p>---</p>
-	
-	<p>Base Color : {{$ctrl.baseColor}} </p>
-	<p>Base Cost Array: {{$ctrl.baseCost}} </p>	
-	<p>Print Colors : {{$ctrl.printColors}} </p>
-	<p>Current Cost Per Color : {{$ctrl.costPerColor}} </p>
-</div>
 
- 
- 
- 
- 
